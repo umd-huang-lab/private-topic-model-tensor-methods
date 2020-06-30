@@ -2,13 +2,13 @@ version: '3'
 services:
   jupyter:
     restart: always
-    container_name: jupyter
-    image: private_topic_model_course_server
+    container_name: slda-jupyter
+    image: private-topic-model-tensor-methods_server
     command: >
       bash -c "python manage.py makemigrations && python manage.py migrate && /tini --
       python manage.py shell_plus --notebook"
     ports:
-      - 8888:8888
+      - 8866:8866
     depends_on:
       - postgres
     volumes:
@@ -16,7 +16,7 @@ services:
     working_dir: /code/experiments
   server:
     restart: always
-    container_name: server
+    container_name: slda-server
     build:
       context: .
     command: sleep infinity
@@ -34,6 +34,6 @@ services:
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=lda
     ports:
-      - 5432:5432
+      - 6666:6666
 volumes:
   database-data:
