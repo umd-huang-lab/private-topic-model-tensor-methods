@@ -1,0 +1,39 @@
+version: '3'
+services:
+  jupyter:
+    restart: always
+    container_name: jupyter
+    image: private_topic_model_course_server
+    command: >
+      bash -c "python manage.py makemigrations && python manage.py migrate && /tini --
+      python manage.py shell_plus --notebook"
+    ports:
+      - 8888:8888
+    depends_on:
+      - postgres
+    volumes:
+      - ./:/code
+    working_dir: /code/experiments
+  server:
+    restart: always
+    container_name: server
+    build:
+      context: .
+    command: sleep infinity
+    volumes:
+      - ./:/code
+    depends_on:
+      - postgres
+  postgres:
+    restart: always
+    image: postgres
+    volumes:
+      - database-data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=prod
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=lda
+    ports:
+      - 5432:5432
+volumes:
+  database-data:

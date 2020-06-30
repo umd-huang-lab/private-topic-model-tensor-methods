@@ -8,10 +8,9 @@
 **.bbl
 **.blg
 
-**.DS_Store
 **.ipynb_checkpoints/
 
-**/outputs
+**/outputs/
 
 **.idea/
 
@@ -21,8 +20,5 @@ __pycache__/
 **.pickle
 **.csv
 **.zip
-experiments/experiments/furong-debug-run.py
 
-experiments/experiments/test-simplex.py
-*.tex
-*.ipynb
+**.git

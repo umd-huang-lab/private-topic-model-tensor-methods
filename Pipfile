@@ -1,0 +1,29 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+tensorly = "*"
+scipy = "*"
+pandas = "*"
+matplotlib = "*"
+seaborn = "*"
+django = "*"
+djangorestframework = "*"
+django-extensions = "*"
+ipykernel = "*"
+notebook = "*"
+requests = "*"
+plotly = "*"
+"psycopg2-binary" = "*"
+opt-einsum = "*"
+django-polymorphic = "*"
+autodp = "*"
+statsmodels = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
