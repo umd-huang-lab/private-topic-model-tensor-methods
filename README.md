@@ -1,6 +1,8 @@
 # Experimental Setup
 
-All data is stored inside `experimental-data`.
+Build docker:
+docker-compose kill && docker-compose build && docker-compose up -d
+
 
 Conventions are as follows - 
 
