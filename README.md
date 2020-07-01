@@ -15,4 +15,8 @@ We provide an end-to-end differentially private spectral algorithm for learning 
 Build docker:
 docker-compose kill && docker-compose build && docker-compose up -d
 
-
+# Contributors
+Mukul Ram https://github.com/ExSidius
+Christopher DeCarolis https://github.com/dpeng817
+Yu-Xiang Wang https://github.com/yuxiangw
+Furong Huang https://github.com/FurongHuang/
